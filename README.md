@@ -1,72 +1,96 @@
-# Tatedrez-game
-
-Create a tateDrez game using good coding practices, take into account the mantainance, scalability and readability of the code.
-You should use the best practices at your disposal in order to guarantee the best and easier code re-usability.
-
-Explain on a separated text document your implementation choices for the different systems or modules implemented.
-Juicyness and attractiveness of the gameplay and UI will be valorated too.
-
-The game must be buildable and runnable on iOS or Android at 60fps without crashes or errors.
+# Tatedrez Case Study
 
 ---
 
-# GAME DESCRIPTION AND RULES:
-Here's a step-by-step description of how a game of Tateddrez would unfold:  
+**Objective:**
 
-* **Pieces:**
-    The game has only 3 pieces. Knight, Bishop and Rook:
-    * Knight (Horse): The knight moves in an L-shape: two squares in one direction (either horizontally or vertically), followed by one square perpendicular to the previous direction. Knights can jump over other pieces on the board, making their movement unique. Knights can move to any square on the board that follows this L-shaped pattern, regardless of the color of the squares.
-    * Rook: The rook moves in straight lines either horizontally or vertically. It can move any number of squares in the chosen direction, as long as there are no pieces blocking its path.
-    * Bishop: The bishop moves diagonally on the board. It can move any number of squares diagonally in a single move, as long as there are no pieces obstructing its path.
+Create a simplified prototype of the Tateddrez game, focusing on **code architecture**, **maintainability**, **readability**, and **modularity**. The goal is not to complete the task in 4 hours but to showcase your approach, structure, and practices within the allotted time. We prioritize quality over quantity or completeness.
 
-* **Board Setup:**
-    An empty board is placed, consisting of a 3x3 grid, similar to a Tic Tac Toe game.
+---
 
-  <img width="320" alt="image" src="https://github.com/juanblasco/tatedrez-game/assets/129755869/69e58f89-c8e0-407c-9003-0ce5a6bb0beb">
+### **Assessment Criteria:**
 
-* **Piece Placement:**
-    Choose a random player to start.  
-    Player 1 places one of their pieces in an empty square on the board.  
-    Player 2 places one of their pieces in another empty square on the board.  
-    They continue alternating until both players have placed their three pieces on the board.
+To ensure transparency, your submission will be evaluated based on the following criteria:
 
-  <img width="321" alt="image" src="https://github.com/juanblasco/tatedrez-game/assets/129755869/85ec3c00-6cd7-467e-b853-37f28698829a">
+1. **Code Quality:**
+    - Maintainable and modular structure.
+    - Adherence to clean coding principles (e.g., SOLID, DRY, KISS, Design patterns).
+    - Clear and concise naming conventions.
+2. **Scalability:**
+    - Extensibility of systems for future features or game logic.
+    - Consideration of how the code would handle increased complexity.
+3. **Readability:**
+    - Well-organized code with appropriate comments.
+    - Logical file and folder structure.
+4. **Problem-Solving Approach:**
+    - Clear design of systems and ability to break down the task into smaller, manageable modules.
+    - Documentation of decisions and assumptions.
+5. **Autonomy and Ownership:**
+    - Ability to demonstrate independence in implementing features within a given timeframe.
+6. **Industry standards**
+    - Knowledge and implementation of industry standards will be considered a plus.
+
+---
+
+### **Game Description and Rules:**
+
+### **Key Mechanics:**
+
+1. **Pieces:**
+    - **Knight:** Moves in an L-shape.
+    - **Rook:** Moves in straight lines (horizontally/vertically).
+    - **Bishop:** Moves diagonally.
+
+1. **Board Setup:**
+    - A 3x3 grid like Tic Tac Toe.
+    - Players alternate placing pieces until all six are on the board.
   
-
-* **Checking for TicTacToe:**
-    After all players have placed their three pieces on the board, it's checked whether anyone has managed to create a line of three pieces in a row, column, or diagonal – a TicTacToe.
-
-* **Dynamic Mode:**
-    If neither player has achieved a TicTacToe with the placed pieces, the game enters the dynamic mode of Tateddrez.
-    If X player can't move, the other player move twice.
-    In this mode, players take turns to move one of their pieces following chess rules.
-    **Capturing opponent's pieces is not allowed.**
-
-* **Seeking TicTacToe:**
-    In dynamic mode, players strategically move their pieces to form a TicTacToe.  
-    They continue moving their pieces in turns until one of them achieves a TicTacToe with their three pieces.
-
-  <img width="321" alt="image" src="https://github.com/juanblasco/tatedrez-game/assets/129755869/2d3e69f8-89ae-4890-b19a-aadb9838cfda">
+      
+<img src="https://github.com/user-attachments/assets/b0a02071-da9d-4fd9-aa3f-9770ea3ee94e" alt="Alt text" width="200"></img>
+<img src="https://github.com/user-attachments/assets/a918d6f6-c93c-4ee4-bb99-9c4b5b2071bd" alt="Alt text" width="200"></img>
 
 
-* **Game Conclusion:**
-    The game of Tateddrez concludes when one of the players manages to achieve a TicTacToe with their three pieces, either during the initial placement phase or during dynamic mode.  
-    The player who achieves the TicTacToe is declared the winner.
+1. **Victory Conditions:**
+    - A player wins by forming a line (row, column, or diagonal) with their pieces.
 
-  <img width="317" alt="image" src="https://github.com/juanblasco/tatedrez-game/assets/129755869/9561dd1b-d760-47ec-8bc9-41086e1960db">
+<img src="https://github.com/user-attachments/assets/95f3d197-b721-4038-8cb4-b3b7f331b610" alt="Alt text" width="200"></img>
 
+
+1. **Dynamic Mode:**
+    - If no line is formed in placement, players take turns moving their pieces based on chess rules.
 
 ---
-# Tech requirements
-* Use Unity 2022.3.21
-* Please use only free assets. No paid assets or plugins should be used.
-* Any external module/plugin/library/resource should be in the project. Please don't use github URLs to intstall UPM packages.  
----
-# Delivery
-* Fork this repository or clone this repository and create a new one into your github account and share the repository with the users "shanickgauthier", "juanblasco" and "kk-homa" or make it public.
-* Build Android .apk and upload it to the repository.  
----
-### Disclaimer
-The company reserves the right not to provide feedback on the outcome of your case study.  
 
-Good luck!
+### **Requirements:**
+
+1. **Scope for 4-Hour Limit:**
+    - Implement **piece placement** and basic **board validation** for a win condition.
+    - Use placeholder logic for dynamic mode (e.g., logging moves without full implementation).
+    - We don’t expect a fully functioning product but want to see how you approach and organize your work within the constraints
+2. **Technical Constraints:**
+    - Buildable on **Android (APK)**.
+    - Use **Unity 2022.3.21**.
+    - Free assets only
+3. **Delivery Deadline:**
+    - The project must be submitted within **4 hours** of receiving the case study link.
+
+---
+
+### **Submission Guidelines:**
+
+1. **Repository:**
+    - Fork or clone the provided repository and create a new one on your GitHub account.
+    - Share it with "shanickgauthier" and "juanblasco," or make it public.
+2. **Deliverables:**
+    - Unity project files.
+    - Android APK demonstrating the build process.
+    - A text document explaining your design and technical decisions
+    - ***Note :** Unfinished submissions are acceptable as long as they demonstrate the intended coding principles*
+
+---
+
+### **Why This Case Study?**
+
+At Homa, we look for individuals who take **extreme ownership**, thrive in **low-bureaucracy** environments, and can scale **creative ideas** into **high-performing games**. This case study is designed to assess your potential to fit into our fast-paced, innovative team and your ability to deliver quality code while balancing real-world constraints.
+
+Good luck! 🚀
